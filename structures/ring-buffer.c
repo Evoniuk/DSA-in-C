@@ -131,6 +131,8 @@ int look(RingBuffer* rb)
 
 int at_index(RingBuffer* rb, int index)
 {
+    if (rb->head + index > rb->tail) return 0;
+
     return rb->buffer[real_index(rb->head + index, rb->capacity)];
 }
 
