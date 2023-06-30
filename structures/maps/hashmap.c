@@ -169,8 +169,6 @@ void grow_map(Map* map)
     for (unsigned int i = 0; i < old_capacity; i++)
     {
         Entry* entry = old_entries[i];
-        if (!entry) continue;
-
         while (entry)
         {
             _add(map, entry->key, entry->value);
